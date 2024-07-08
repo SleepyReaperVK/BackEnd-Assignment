@@ -1,0 +1,7 @@
+Kafka:
+  BootstrapServers: "localhost:9092"
+  Topic: "my-topic"
+MongoDB:
+  ConnectionString: "mongodb://localhost:27017"
+  DataBase: "myDatabase"
+  Collection : "myCollection"
