@@ -4,3 +4,4 @@ MongoDB:
   Collection : "Events"
 Redis:
   ConnectionString: "redis:6379"
+  TimeKey: "lastTimestamp"
