@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements 3 microservises kafkaProducer , kafka consumer and an ETL microservice using lockal dockerized Apache Kafka & zookeper, MongoDB, Redis.
+This project implements 3 microservices: Kafka Producer, Kafka Consumer, and an ETL microservice using locally Dockerized Apache Kafka & Zookeeper, MongoDB, and Redis.
 
 ## Technology Stack
 
@@ -15,9 +15,10 @@ This project implements 3 microservises kafkaProducer , kafka consumer and an ET
 The application is primarily developed in C#/.NET.
 
 ## Architecture
-1.The kafka produser will spit out an Event each second to the kafka broker.
-2.Then kafka consumer will poll from the broker , parse the Date and insert to Mongo.
-3.Then ETL will poll the lastTimestamp from redis(if exist), will find it in mongo then insert from lastTime till the latest to redis.  
+
+1. The Kafka Producer will produce an Event every second to the Kafka broker.
+2. The Kafka Consumer will poll from the broker, parse the Date, and insert it into MongoDB.
+3. The ETL microservice will poll the lastTimestamp from Redis (if it exists), find it in MongoDB, and insert data from the last time till the latest into Redis.
 
 # Kafka Producer Application
 
@@ -50,27 +51,21 @@ The application is primarily developed in C#/.NET.
 ### 5. EventData.cs
 - Represents an event data object.
 
-
 # ETL Microservice Application
 
 This project implements a microservice for ETL (Extract, Transform, Load) operations between MongoDB and Redis.
 
 ### 1. Program.cs
-
-This file serves as the entry point for the microservice, initializing necessary components and starting the ETL process.
+- Entry point for the microservice, initializing necessary components and starting the ETL process.
 
 ### 2. MongoDBService.cs
-
-Handles interactions with MongoDB, including connection setup, data fetching based on timestamps, and index management.
+- Handles interactions with MongoDB, including connection setup, data fetching based on timestamps, and index management.
 
 ### 3. RedisService.cs
-
-Manages Redis operations such as connection handling, retrieving and setting data (timestamps and ETL results).
+- Manages Redis operations such as connection handling, retrieving and setting data (timestamps and ETL results).
 
 ### 4. ETLService.cs
-
-Orchestrates the ETL process:
-- Retrieves data from MongoDB based on the last processed timestamp stored in Redis.
-- Transfers data to Redis.
-- Updates the last processed timestamp in Redis.
-
+- Orchestrates the ETL process:
+  - Retrieves data from MongoDB based on the last processed timestamp stored in Redis.
+  - Transfers data to Redis.
+  - Updates the last processed timestamp in Redis.
