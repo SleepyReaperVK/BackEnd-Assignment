@@ -1,0 +1,2 @@
+docker build -t etl-service:latest .
+docker run -d --name etl --network backend-assignment_mongo-network  etl-service:latest .

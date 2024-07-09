@@ -1,16 +1,16 @@
 ﻿using System;
+using System.IO;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Confluent.Kafka;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Yaml;
-using System.IO;
 
 class Program
 {
     static async Task Main(string[] args)
     {
-        
         try
         {
             // Load configuration
@@ -26,24 +26,22 @@ class Program
 
             using (var producer = new ProducerBuilder<Null, string>(producerConfig).Build())
             {
-                int messageId = 0;
-                Console.WriteLine("Produser Started, Connecting...");
+                Console.WriteLine("Producer Started, Connecting...");
                 while (true)
                 {
-                    var timestamp = DateTime.UtcNow;
-                    var message = $"{messageId},{timestamp:O}";
+                    var eventObj = new Event();
+                    var eventJson = JsonSerializer.Serialize(eventObj);
 
                     try
                     {
-                        var deliveryResult = await producer.ProduceAsync(topic, new Message<Null, string> { Value = message });
-                        Console.WriteLine($"Message delivered to {deliveryResult.TopicPartitionOffset}: {message}");
+                        var deliveryResult = await producer.ProduceAsync(topic, new Message<Null, string> { Value = eventJson });
+                        Console.WriteLine($"Message delivered to {deliveryResult.TopicPartitionOffset}: {eventJson}");
                     }
                     catch (ProduceException<Null, string> ex)
                     {
                         Console.WriteLine($"Failed to produce message: {ex.Error.Reason}");
                     }
 
-                    messageId++;
                     Thread.Sleep(1000);
                 }
             }

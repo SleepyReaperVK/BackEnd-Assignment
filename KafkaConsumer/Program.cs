@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Yaml;
 using System.IO;
 using MongoDB.Driver;
+using Newtonsoft.Json;
 
 class Program
 {
@@ -21,7 +22,7 @@ class Program
         var consumerConfig = new ConsumerConfig
         {
             BootstrapServers = bootstrapServers,
-            GroupId = "test-consumer-group",
+            GroupId = "event-group",
             AutoOffsetReset = AutoOffsetReset.Latest
         };
 
@@ -30,7 +31,7 @@ class Program
         var databaseName = config["MongoDB:Database"];
         var collectionName = config["MongoDB:Collection"];
         var database = mongoClient.GetDatabase(databaseName);
-        var collection = database.GetCollection<MyDataObject>(collectionName);
+        var collection = database.GetCollection<EventData>(collectionName);
 
         using (var consumer = new ConsumerBuilder<Ignore, string>(consumerConfig).Build())
         {
@@ -45,28 +46,12 @@ class Program
                         Console.WriteLine("Waiting to consume...");
                         var cr = consumer.Consume();
 
-                        // Parse Kafka message into MyDataObject
-                        var messageParts = cr.Message.Value.Split(',');
-                        if (messageParts.Length == 2)
-                        {
-                            var id = int.Parse(messageParts[0]);
-                            var timestamp = DateTime.Parse(messageParts[1]);
+                        // Parse Kafka message into EventData object
+                        EventData eventData = JsonConvert.DeserializeObject<EventData>(cr.Message.Value);
 
-                            var dataObject = new MyDataObject
-                            {
-                                Id = id,
-                                Timestamp = timestamp,
-                                // You can add more fields here as needed
-                            };
-
-                            // Insert into MongoDB
-                            collection.InsertOne(dataObject);
-                            Console.WriteLine($"Inserted data '{dataObject}' into MongoDB.");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Invalid message format: '{cr.Message.Value}'");
-                        }
+                        // Insert into MongoDB
+                        collection.InsertOne(eventData);
+                        Console.WriteLine($"Inserted event '{eventData}' into MongoDB.");
                     }
                     catch (ConsumeException e)
                     {
@@ -76,6 +61,10 @@ class Program
                     {
                         Console.Error.WriteLine("Consumption loop cancelled: " + e.Message);
                         break;
+                    }
+                    catch (JsonException ex)
+                    {
+                        Console.WriteLine($"Error deserializing JSON: {ex.Message}");
                     }
                     catch (Exception ex)
                     {
@@ -88,12 +77,5 @@ class Program
                 consumer.Close();
             }
         }
-    }
-
-    public class MyDataObject
-    {
-        public int Id { get; set; }
-        public DateTime Timestamp { get; set; }
-        // Add more properties as needed
     }
 }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Eyal\\KafkaConsumer\\KafkaConsumer.csproj": {}
+    "C:\\Users\\SleepyReaper\\Desktop\\BackEnd-Assignment\\KafkaConsumer\\KafkaConsumer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Eyal\\KafkaConsumer\\KafkaConsumer.csproj": {
+    "C:\\Users\\SleepyReaper\\Desktop\\BackEnd-Assignment\\KafkaConsumer\\KafkaConsumer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Eyal\\KafkaConsumer\\KafkaConsumer.csproj",
+        "projectUniqueName": "C:\\Users\\SleepyReaper\\Desktop\\BackEnd-Assignment\\KafkaConsumer\\KafkaConsumer.csproj",
         "projectName": "KafkaConsumer",
-        "projectPath": "C:\\Users\\User\\Desktop\\Eyal\\KafkaConsumer\\KafkaConsumer.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Eyal\\KafkaConsumer\\obj\\",
+        "projectPath": "C:\\Users\\SleepyReaper\\Desktop\\BackEnd-Assignment\\KafkaConsumer\\KafkaConsumer.csproj",
+        "packagesPath": "C:\\Users\\SleepyReaper\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SleepyReaper\\Desktop\\BackEnd-Assignment\\KafkaConsumer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SleepyReaper\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -63,6 +63,10 @@
             "MongoDB.Driver": {
               "target": "Package",
               "version": "[2.27.0, )"
+            },
+            "newtonsoft.json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
@@ -81,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
