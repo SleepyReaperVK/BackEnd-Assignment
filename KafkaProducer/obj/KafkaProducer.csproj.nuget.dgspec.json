@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SleepyReaper\\Desktop\\BackEnd-Assignment\\KafkaProducer\\KafkaProducer.csproj": {}
+    "C:\\Users\\User\\Desktop\\Eyal\\KafkaProducer\\KafkaProducer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SleepyReaper\\Desktop\\BackEnd-Assignment\\KafkaProducer\\KafkaProducer.csproj": {
+    "C:\\Users\\User\\Desktop\\Eyal\\KafkaProducer\\KafkaProducer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SleepyReaper\\Desktop\\BackEnd-Assignment\\KafkaProducer\\KafkaProducer.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Eyal\\KafkaProducer\\KafkaProducer.csproj",
         "projectName": "KafkaProducer",
-        "projectPath": "C:\\Users\\SleepyReaper\\Desktop\\BackEnd-Assignment\\KafkaProducer\\KafkaProducer.csproj",
-        "packagesPath": "C:\\Users\\SleepyReaper\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SleepyReaper\\Desktop\\BackEnd-Assignment\\KafkaProducer\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\Eyal\\KafkaProducer\\KafkaProducer.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Eyal\\KafkaProducer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\SleepyReaper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

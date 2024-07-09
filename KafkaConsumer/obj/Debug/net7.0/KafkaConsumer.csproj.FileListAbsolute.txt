@@ -194,3 +194,4 @@ C:\Users\SleepyReaper\Desktop\BackEnd-Assignment\KafkaConsumer\obj\Debug\net7.0\
 C:\Users\SleepyReaper\Desktop\BackEnd-Assignment\KafkaConsumer\obj\Debug\net7.0\KafkaConsumer.genruntimeconfig.cache
 C:\Users\SleepyReaper\Desktop\BackEnd-Assignment\KafkaConsumer\obj\Debug\net7.0\ref\KafkaConsumer.dll
 C:\Users\SleepyReaper\Desktop\BackEnd-Assignment\KafkaConsumer\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\User\Desktop\Eyal\KafkaConsumer\bin\Debug\net7.0\Newtonsoft.Json.dll
