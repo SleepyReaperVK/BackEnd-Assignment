@@ -3,5 +3,5 @@ Kafka:
   Topic: "my-topic"
 MongoDB:
   ConnectionString: "mongodb://mongodb:27017"
-  DataBase: "myDatabase"
+  DataBase: "test"
   Collection : "Events"

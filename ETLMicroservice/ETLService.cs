@@ -28,7 +28,7 @@ namespace ETLMicroservice
                 var lastTimestamp = await _redisService.GetLastTimestampAsync(_lastTimestampKey);
                 Console.WriteLine("Using Redis timestamp: " + lastTimestamp);
                 DateTime filterTimestamp = string.IsNullOrEmpty(lastTimestamp)
-                    ? DateTime.Now.Subtract(TimeSpan.FromSeconds(30))
+                    ? DateTime.MinValue
                     : DateTime.Parse(lastTimestamp);
 
                 Console.WriteLine("Using timestamp: " + filterTimestamp);

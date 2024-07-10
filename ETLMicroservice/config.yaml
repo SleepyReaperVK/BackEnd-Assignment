@@ -1,6 +1,6 @@
 MongoDB:
   ConnectionString: "mongodb://mongodb:27017"
-  DataBase: "myDatabase"
+  DataBase: "test"
   Collection : "Events"
 Redis:
   ConnectionString: "redis:6379"

@@ -36,4 +36,8 @@ public class ConfigLoader
     {
         return Configuration["Kafka:Topic"];
     }
+    public int GetInitIndex()
+    {
+        return int.Parse(Configuration["Kafka:InitIndex"]);
+    }
 }

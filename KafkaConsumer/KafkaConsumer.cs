@@ -21,7 +21,7 @@ public class KafkaConsumer
         {
             BootstrapServers = _bootstrapServers,
             GroupId = "event-group",
-            AutoOffsetReset = AutoOffsetReset.Latest
+            AutoOffsetReset = AutoOffsetReset.Earliest
         };
 
         using (var consumer = new ConsumerBuilder<Ignore, string>(consumerConfig).Build())
@@ -38,7 +38,7 @@ public class KafkaConsumer
                         var cr = consumer.Consume();
                         EventData eventData = JsonConvert.DeserializeObject<EventData>(cr.Message.Value);
                         _mongoDbHandler.InsertEvent(eventData);
-                        Console.WriteLine($"Inserted event '{eventData}' into MongoDB.");
+                        Console.WriteLine($"Inserted event '{eventData.ReporterId}:{eventData.Timestamp}' into MongoDB.");
                     }
                     catch (ConsumeException e)
                     {

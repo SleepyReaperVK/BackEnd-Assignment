@@ -1,3 +1,4 @@
 Kafka:
   BootstrapServers: "kafka:9092"
   Topic: "my-topic"
+  InitIndex: 1

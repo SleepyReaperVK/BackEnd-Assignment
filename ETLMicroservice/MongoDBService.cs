@@ -27,7 +27,7 @@ namespace ETLMicroservice
 
         public async Task<IList<BsonDocument>> FetchDataAsync(DateTime filterTimestamp)
         {
-            var filter = Builders<BsonDocument>.Filter.Gte("Timestamp", filterTimestamp);
+            var filter = Builders<BsonDocument>.Filter.Gt("Timestamp", filterTimestamp);
             var sort = Builders<BsonDocument>.Sort.Ascending("Timestamp");
             var options = new FindOptions<BsonDocument> { Sort = sort };
 
