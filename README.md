@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements 3 microservices: Kafka Producer, Kafka Consumer, and an ETL microservice using locally Dockerized Apache Kafka & Zookeeper, MongoDB, and Redis.
+This project implements 3 microservices: Kafka Producer, Kafka Consumer, and an ETL microservice using locally Dockerize Apache Kafka & Zookeeper, MongoDB, and Redis.
 
 ## Technology Stack
 
@@ -19,6 +19,17 @@ The application is primarily developed in C#/.NET.
 1. The Kafka Producer will produce an Event every second to the Kafka broker.
 2. The Kafka Consumer will poll from the broker, parse the Date, and insert it into MongoDB.
 3. The ETL microservice will poll the lastTimestamp from Redis (if it exists), find it in MongoDB, and insert data from the last time till the latest into Redis.
+
+## Known Issues    
+
+1. Relocate the seconds from the producer,ETL to .yaml
+2. Make a Event factory in Producer, Event should be simple plain obj
+3. Make use of the cursor in MongoDB , get sorted events from MongoDB.
+4. test if the producer starts twice (up , stop , up) how will the new index will behave in mongo/redis.
+5. make sure to add exertions to mongo/redis if Index already exists.
+
+
+
 
 # Kafka Producer Application
 

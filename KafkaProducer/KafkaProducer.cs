@@ -26,7 +26,7 @@ public class KafkaProducer
             Console.WriteLine("Producer Started, Connecting...");
             //await ProduceMessage(producer, "Initial connection test message");
             // wait for connection
-            Thread.Sleep(500);
+            Thread.Sleep(500);//TODO 
             while (true)
             {
                 var eventObj = new Event(_configLoader);
@@ -34,7 +34,7 @@ public class KafkaProducer
 
                 await ProduceMessage(producer, eventJson);
 
-                Thread.Sleep(1000);
+                Thread.Sleep(1000);//TODO 
             }
         }
     }

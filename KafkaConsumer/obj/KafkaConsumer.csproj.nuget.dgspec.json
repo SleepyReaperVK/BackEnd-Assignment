@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Eyal\\kafkaConsumer\\KafkaConsumer.csproj": {}
+    "C:\\Users\\User\\Desktop\\Eyal\\KafkaConsumer\\KafkaConsumer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Eyal\\kafkaConsumer\\KafkaConsumer.csproj": {
+    "C:\\Users\\User\\Desktop\\Eyal\\KafkaConsumer\\KafkaConsumer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Eyal\\kafkaConsumer\\KafkaConsumer.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Eyal\\KafkaConsumer\\KafkaConsumer.csproj",
         "projectName": "KafkaConsumer",
-        "projectPath": "C:\\Users\\User\\Desktop\\Eyal\\kafkaConsumer\\KafkaConsumer.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Eyal\\KafkaConsumer\\KafkaConsumer.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Eyal\\kafkaConsumer\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Eyal\\KafkaConsumer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

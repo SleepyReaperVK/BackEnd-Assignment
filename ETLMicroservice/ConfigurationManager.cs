@@ -1,17 +1,36 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Configuration.Yaml;
+using System;
+using System.IO;
 
-namespace ETLMicroservice
+public class ConfigurationHandler
 {
-    // Handles configuration loading.
-    public static class ConfigurationManager
+    public IConfiguration Configuration { get; private set; }
+
+    public ConfigurationHandler()
     {
-        public static IConfigurationRoot LoadConfiguration()
+        LoadConfiguration();
+    }
+
+    private void LoadConfiguration()
+    {
+        try
         {
-            var builder = new ConfigurationBuilder()
+            Configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddYamlFile("config.yaml", optional: false, reloadOnChange: true);
-            return builder.Build();
+                .AddYamlFile("config.yaml", optional: false, reloadOnChange: true)
+                .Build();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to load configuration: {ex.Message}");
+            throw;
         }
     }
+
+    public string GetRedisConnectionString() => Configuration["Redis:ConnectionString"];
+    public string GetRedisTimeKey() => Configuration["Redis:TimeKey"];
+    public string GetMongoConnectionString() => Configuration["MongoDB:ConnectionString"];
+    public string GetMongoDatabaseName() => Configuration["MongoDB:Database"];
+    public string GetMongoCollectionName() => Configuration["MongoDB:Collection"];
 }

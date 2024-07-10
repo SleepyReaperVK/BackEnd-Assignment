@@ -13,7 +13,7 @@ namespace ETLMicroservice
         public MongoDBService(string connectionString, string databaseName, string collectionName)
         {
             var settings = MongoClientSettings.FromConnectionString(connectionString);
-            settings.MaxConnectionIdleTime = TimeSpan.FromSeconds(30);
+            settings.MaxConnectionIdleTime = TimeSpan.FromSeconds(30);//TODO
             var client = new MongoClient(settings);
             var database = client.GetDatabase(databaseName);
             _mongoCollection = database.GetCollection<BsonDocument>(collectionName);
@@ -31,7 +31,7 @@ namespace ETLMicroservice
             var sort = Builders<BsonDocument>.Sort.Ascending("Timestamp");
             var options = new FindOptions<BsonDocument> { Sort = sort };
 
-            var cursor = await _mongoCollection.FindAsync(filter, options);
+            var cursor = await _mongoCollection.FindAsync(filter, options);//TODO
             return await cursor.ToListAsync();
         }
     }
