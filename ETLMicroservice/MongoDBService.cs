@@ -1,6 +1,6 @@
 using MongoDB.Bson;
 using MongoDB.Driver;
-using System;
+using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 
 namespace ETLMicroservice
@@ -9,11 +9,11 @@ namespace ETLMicroservice
     public class MongoDBService
     {
         private readonly IMongoCollection<BsonDocument> _mongoCollection;
-
-        public MongoDBService(string connectionString, string databaseName, string collectionName)
+        
+        public MongoDBService(string connectionString, string databaseName, string collectionName , ConfigurationHandler configuration)
         {
             var settings = MongoClientSettings.FromConnectionString(connectionString);
-            settings.MaxConnectionIdleTime = TimeSpan.FromSeconds(30);//TODO
+            settings.MaxConnectionIdleTime = TimeSpan.FromSeconds(configuration.GetInitTimeoutSec());
             var client = new MongoClient(settings);
             var database = client.GetDatabase(databaseName);
             _mongoCollection = database.GetCollection<BsonDocument>(collectionName);
@@ -28,11 +28,12 @@ namespace ETLMicroservice
         public async Task<IList<BsonDocument>> FetchDataAsync(DateTime filterTimestamp)
         {
             var filter = Builders<BsonDocument>.Filter.Gt("Timestamp", filterTimestamp);
-            var sort = Builders<BsonDocument>.Sort.Descending("Timestamp");
+            var sort = Builders<BsonDocument>.Sort.Ascending("Timestamp");
             var options = new FindOptions<BsonDocument> { Sort = sort };
-            var emptyFilter = Builders<BsonDocument>.Filter.Empty;
-            //var cursor = await _mongoCollection.FindAsync(filter, options);//TODO
-            var cursor = await _mongoCollection.FindAsync(emptyFilter,options);
+            //var emptyFilter = Builders<BsonDocument>.Filter.Empty;
+            //var cursor = await _mongoCollection.FindAsync(emptyFilter,options);
+            var cursor = await _mongoCollection.FindAsync(filter , options);//TODO
+
             return await cursor.ToListAsync();
         }
     }

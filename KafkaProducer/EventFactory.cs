@@ -9,11 +9,14 @@ public class EventFactory
         {
             _reporterCounter = configLoader.GetInitIndex();
         }
-        int reporterId = _reporterCounter + 1; //TODO 
+        int reporterId = _reporterCounter;  
+        _reporterCounter=_reporterCounter+ configLoader.GetInitIncrement();
+
         DateTime timestamp = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, tz);
-        int metricId = _random.Next(1, 11);
-        int metricValue = _random.Next(1, 101);
-        string message = "hello world";
+        int metricId = _random.Next(configLoader.GetEventMatricIdStart(), configLoader.GetEventMatricIdEnd());
+        int metricValue = _random.Next(configLoader.GetEventMatricValueStart(), configLoader.GetEventMatricValueEnd());
+        string message = configLoader.GetEventMessage();
+        
 
         return new Event(reporterId, timestamp, metricId, metricValue, message);
     }

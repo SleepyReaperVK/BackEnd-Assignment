@@ -2,6 +2,10 @@ MongoDB:
   ConnectionString: "mongodb://mongodb:27017"
   DataBase: "test"
   Collection : "Events"
+  InitTimeoutSec : 30000
 Redis:
   ConnectionString: "redis:6379"
   TimeKey: "lastTimestamp"
+InitValues:
+  InitIncrementsSec: 30000
+  InitTaskDelay: -1

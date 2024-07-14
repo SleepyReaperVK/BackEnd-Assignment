@@ -1,4 +1,15 @@
 Kafka:
   BootstrapServers: "kafka:9092"
   Topic: "my-topic"
-  InitIndex: 1
+InitValues:
+  InitRepIndex: 1
+  InitRepIncrement: 1
+  InitSleepSec: 500
+  InitIncrementsSec: 1000
+EventValues:
+  EventMatricIdRndStart: 1
+  EventMatricIdRndStartEnd: 11
+  EventMatricValueRndStart: 1
+  EventMatricValueRndStartEnd: 101
+  EventMassage: "Hello World!"
+  

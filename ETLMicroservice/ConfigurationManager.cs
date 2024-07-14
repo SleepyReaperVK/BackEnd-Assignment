@@ -33,4 +33,8 @@ public class ConfigurationHandler
     public string GetMongoConnectionString() => Configuration["MongoDB:ConnectionString"];
     public string GetMongoDatabaseName() => Configuration["MongoDB:Database"];
     public string GetMongoCollectionName() => Configuration["MongoDB:Collection"];
+    public int GetInitIncrementSec() => int.Parse(Configuration["InitValues:InitIncrementsSec"]);
+    public int GetInitTaskDelay() => int.Parse(Configuration["InitValues:InitTaskDelay"]);
+    public int GetInitTimeoutSec() => int.Parse(Configuration["MongoDB:InitTimeoutSec"]);
+
 }

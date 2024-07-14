@@ -42,23 +42,28 @@ public class KafkaConsumer
                     }
                     catch (ConsumeException e)
                     {
+                        Console.WriteLine("Abort Inserting Event...");
                         Console.WriteLine($"Consume error: {e.Error.Reason}");
                     }
                     catch (OperationCanceledException e)
                     {
+                        Console.WriteLine("Abort Inserting Event...");
                         Console.Error.WriteLine("Consumption loop cancelled: " + e.Message);
                         break;
                     }
                     catch (DuplicateEventException ex)
                     {
-                        Console.WriteLine($"Duplicate event error: {ex.Message}");
+                        Console.WriteLine("Abort Inserting Event...");
+                        Console.WriteLine($"Duplicate event id error: {ex.Message}");
                     }
                     catch (JsonException ex)
                     {
+                        Console.WriteLine("Abort Inserting Event...");
                         Console.WriteLine($"Error deserializing JSON: {ex.Message}");
                     }
                     catch (Exception ex)
                     {
+                        Console.WriteLine("Abort Inserting Event...");
                         Console.WriteLine($"Error processing message: {ex.Message}");
                     }
                 }

@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "hIQXy8grSdkrXJwjwiuafs14QWToWeVqu7AfTU7QNhsbMZiwXiWovNG7Wrout+Ltz5lqZzLepiJdlJPKkEFVzw==",
+  "dgSpecHash": "K3ip2YRIkGVEc0Z2C5vjoWqpkfmYjzWrQRiFQNt1GQrMUdhao/fC/HioNDqzqaNzCI+xycy2O2shCIJ06Ovb6w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\SleepyReaper\\Desktop\\BackEnd-Assignment\\KafkaProducer\\KafkaProducer.csproj",
+  "projectFilePath": "C:\\Users\\User\\Desktop\\Eyal\\kafkaProducer\\KafkaProducer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\confluent.kafka\\2.4.0\\confluent.kafka.2.4.0.nupkg.sha512",
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\librdkafka.redist\\2.4.0\\librdkafka.redist.2.4.0.nupkg.sha512",
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\8.0.0\\microsoft.extensions.configuration.fileextensions.8.0.0.nupkg.sha512",
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\microsoft.extensions.configuration.yaml\\2.0.0-preview2\\microsoft.extensions.configuration.yaml.2.0.0-preview2.nupkg.sha512",
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\8.0.0\\microsoft.extensions.fileproviders.physical.8.0.0.nupkg.sha512",
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\8.0.0\\microsoft.extensions.filesystemglobbing.8.0.0.nupkg.sha512",
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
-    "C:\\Users\\SleepyReaper\\.nuget\\packages\\yamldotnet\\4.2.1\\yamldotnet.4.2.1.nupkg.sha512"
+    "C:\\Users\\User\\.nuget\\packages\\confluent.kafka\\2.4.0\\confluent.kafka.2.4.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\librdkafka.redist\\2.4.0\\librdkafka.redist.2.4.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\8.0.0\\microsoft.extensions.configuration.fileextensions.8.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.configuration.yaml\\2.0.0-preview2\\microsoft.extensions.configuration.yaml.2.0.0-preview2.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\8.0.0\\microsoft.extensions.fileproviders.physical.8.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\8.0.0\\microsoft.extensions.filesystemglobbing.8.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\yamldotnet\\4.2.1\\yamldotnet.4.2.1.nupkg.sha512"
   ],
   "logs": []
 }
