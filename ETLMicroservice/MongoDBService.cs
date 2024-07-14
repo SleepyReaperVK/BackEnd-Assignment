@@ -28,10 +28,11 @@ namespace ETLMicroservice
         public async Task<IList<BsonDocument>> FetchDataAsync(DateTime filterTimestamp)
         {
             var filter = Builders<BsonDocument>.Filter.Gt("Timestamp", filterTimestamp);
-            var sort = Builders<BsonDocument>.Sort.Ascending("Timestamp");
+            var sort = Builders<BsonDocument>.Sort.Descending("Timestamp");
             var options = new FindOptions<BsonDocument> { Sort = sort };
-
-            var cursor = await _mongoCollection.FindAsync(filter, options);//TODO
+            var emptyFilter = Builders<BsonDocument>.Filter.Empty;
+            //var cursor = await _mongoCollection.FindAsync(filter, options);//TODO
+            var cursor = await _mongoCollection.FindAsync(emptyFilter,options);
             return await cursor.ToListAsync();
         }
     }

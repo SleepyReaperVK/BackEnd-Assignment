@@ -42,16 +42,10 @@ namespace ETLMicroservice
                     var timestamp = entry["Timestamp"].ToUniversalTime().ToString("yyyyMMddHHmmss");
                     var key = $"{reporterId}:{timestamp}";
                     var value = entry.ToJson();
-
+                    await _redisService.SetLastTimestampAsync(_lastTimestampKey, timestamp);
+                    Console.WriteLine("Updated last timestamp in Redis: " + timestamp);
                     var isSet = await _redisService.SetDataAsync(key, value);
-                    Console.WriteLine($"isSet for key {key}: {isSet}");
-                }
-
-                if (mongoEntries.Any())
-                {
-                    var latestTimestamp = mongoEntries.Max(e => e["Timestamp"].ToUniversalTime()).ToString("o");
-                    await _redisService.SetLastTimestampAsync(_lastTimestampKey, latestTimestamp);
-                    Console.WriteLine("Updated last timestamp in Redis: " + latestTimestamp);
+                    // Console.WriteLine($"isSet for key {key}: {isSet}");
                 }
 
                 Console.WriteLine("Transferred entries from MongoDB to Redis.");

@@ -23,10 +23,10 @@ The application is primarily developed in C#/.NET.
 ## Known Issues    
 
 1. Relocate the seconds from the producer,ETL to .yaml
-2. Make a Event factory in Producer, Event should be simple plain obj
-3. Make use of the cursor in MongoDB , get sorted events from MongoDB.
-4. test if the producer starts twice (up , stop , up) how will the new index will behave in mongo/redis.
-5. make sure to add exertions to mongo/redis if Index already exists.
+2. Make a Event factory in Producer, Event should be simple plain obj. Done
+3. Make use of the cursor in MongoDB , get sorted events from MongoDB. 
+4. test if the producer starts twice (up , stop , up) how will the new index will behave in mongo/redis. Done
+5. update lastTimestamp when event inserted to redis.
 
 
 

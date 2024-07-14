@@ -49,6 +49,10 @@ public class KafkaConsumer
                         Console.Error.WriteLine("Consumption loop cancelled: " + e.Message);
                         break;
                     }
+                    catch (DuplicateEventException ex)
+                    {
+                        Console.WriteLine($"Duplicate event error: {ex.Message}");
+                    }
                     catch (JsonException ex)
                     {
                         Console.WriteLine($"Error deserializing JSON: {ex.Message}");

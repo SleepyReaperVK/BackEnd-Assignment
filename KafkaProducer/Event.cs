@@ -15,7 +15,7 @@ public class Event
         {
             _reporterCounter = configLoader.GetInitIndex();
         }
-        ReporterId = _reporterCounter+ 1; //TODO 
+        ReporterId = _reporterCounter++; //TODO 
         Timestamp = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, tz);
         MetricId = _random.Next(1, 11);
         MetricValue = _random.Next(1, 101);
