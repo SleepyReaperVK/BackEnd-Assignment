@@ -29,7 +29,7 @@ public class KafkaProducer
             Thread.Sleep(500);//TODO 
             while (true)
             {
-                var eventObj = new Event(_configLoader);
+                var eventObj = EventFactory.CreateEvent(_configLoader);
                 var eventJson = JsonSerializer.Serialize(eventObj);
 
                 await ProduceMessage(producer, eventJson);
