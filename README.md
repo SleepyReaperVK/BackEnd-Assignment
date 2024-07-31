@@ -4,6 +4,14 @@
 
 This project implements 3 microservices: Kafka Producer, Kafka Consumer, and an ETL microservice using locally Dockerize Apache Kafka & Zookeeper, MongoDB, and Redis.
 
+## Installation
+1. Clone the repository: `git clone https://github.com/SleepyReaperVK/BackEnd-Assignment.git`
+2. Change to the project directory: `cd BackEnd-Assignment`
+3. Run Docker Compose: `docker compose up -d`
+
+**Ensure Docker is running.
+ To see each microservice in action, check the terminal in Docker.**
+
 ## Technology Stack
 
 1. Apache Kafka
